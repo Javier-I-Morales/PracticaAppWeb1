@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PM.master.cs" Inherits="WebApplication1.Pages.PM" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    
+    <link rel="stylesheet" href="~/Css/Style.css" type="text/css" />
+
+
+<%--    <%
+        
+        string name = Request.ServerVariables["SCRIPT_NAME"].Replace("/", "").Replace(".aspx","").ToLower();
+
+        Console.WriteLine(name);
+
+        string fun_dinamica = "<style> \n" + 
+            "header#nav table tr td#" +name+" .nav_h { color: green; } \n" +
+            "header#nav table tr td#" +name+" .nav_h { background-color: white;} \n"+
+            "</style>";
+
+        Response.Write(fun_dinamica);
+    %>--%>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Prueba</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <header id="nav">
+        <h1>PAGINA DE PRUEBA ASP:NET</h1>
+        <table>
+            <tr>
+                <td id="default"><asp:HyperLink ID="nav_default" NavigateUrl="~/Pages/Default.aspx" runat="server" Text="Inicio" CssClass="nav_h"></asp:HyperLink></td>
+                <td id="about"><asp:HyperLink ID="nav_about" NavigateUrl="~/Pages/About.aspx" runat="server" Text="Nosotros" CssClass="nav_h"></asp:HyperLink></td>
+            </tr>
+        </table>
+
+    </header>
+
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <asp:ScriptReference Path="~/Js/Script.js" />
+            </Scripts>
+        </asp:ScriptManager>
+    </form>
+</body>
+</html>
